@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { usePosts } from '../context/PostsContext'
+import { usePosts } from '../../context/PostsContext'
 
 export default function CreatePost() {
   const { createPost } = usePosts()

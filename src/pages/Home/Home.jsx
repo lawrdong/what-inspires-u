@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { usePosts } from '../context/PostsContext';
-import PostCard from '../components/PostCard';
-import SearchBar from '../components/SearchBar';
-import SortMenu from '../components/SortMenu';
+import { usePosts } from '../../context/PostsContext';
+import PostCard from '../../components/PostCard/PostCard';
+import HomeControls from '../../components/HomeControls/HomeControls';
 
 export default function Home() {
   const { posts, fetchPosts } = usePosts();
@@ -35,13 +34,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="home-controls">
-        <SearchBar value={query} onChange={setQuery} />
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <SortMenu value={sort} onChange={setSort} />
-          <Link to="/new" className="btn btn-primary">Share inspiration</Link>
-        </div>
-      </div>
+      <HomeControls query={query} setQuery={setQuery} sort={sort} setSort={setSort} />
 
       <div className="masonry">
         {filtered.map(p => (

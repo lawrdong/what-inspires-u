@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { supabase } from "../supabaseClient";
-import PostCard from "../components/PostCard";
-import CommentSection from "../components/CommentSection";
+import { supabase } from "../../supabaseClient";
+import PostCard from "../../components/PostCard/PostCard";
+import CommentSection from "../../components/CommentSection/CommentSection";
 
 export default function PostPage() {
   const { id } = useParams();

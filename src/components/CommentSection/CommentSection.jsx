@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../../supabaseClient";
+import styles from "./CommentSection.module.css";
 
 export default function CommentSection({ postId, initialComments = [] }) {
   const [comments, setComments] = useState(initialComments);
@@ -31,16 +32,16 @@ export default function CommentSection({ postId, initialComments = [] }) {
           <p>No comments yet</p>
         ) : (
           comments.map(({ id, text, created_at }) => (
-            <div key={id} className="comment-item">
+            <div key={id} className={styles.commentItem}>
               <p>{text}</p>
-              <span className="comment-date">{new Date(created_at).toLocaleTimeString()}</span>
+              <span className={styles.commentDate}>{new Date(created_at).toLocaleTimeString()}</span>
             </div>
           ))
 
         )}
       </div>
 
-      <div className="comment-input-box">
+      <div className={styles.commentInputBox}>
         <input
           type="text"
           value={text}

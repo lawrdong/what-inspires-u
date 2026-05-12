@@ -1,9 +1,10 @@
 import React from 'react'
+import styles from './SortMenu.module.css'
 
 export default function SortMenu({ value, onChange }) {
   return (
     <select
-      className="sort-menu"
+      className={styles.sortMenu}
       value={value}
       onChange={e => onChange(e.target.value)}
     >

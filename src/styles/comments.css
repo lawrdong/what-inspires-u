@@ -1,0 +1,30 @@
+/* Comments section styles */
+.comments-section {
+    margin-top: 2rem;
+}
+
+.comments-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.comment {
+    padding: 0.75rem;
+    background-color: #e2e2e2;
+    border-radius: 0.375rem;
+}
+
+.comment p {
+    margin: 0 0 0.25rem 0;
+}
+
+.comment-time {
+    font-size: 0.75rem;
+    color: #666;
+}

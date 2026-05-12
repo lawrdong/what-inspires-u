@@ -1,0 +1,9 @@
+.post-page {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.post-page h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}

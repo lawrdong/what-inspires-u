@@ -1,0 +1,64 @@
+/* Post page styles */
+.post-page {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.post-page h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-page-meta {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.post-page-content {
+    margin-bottom: 1rem;
+}
+
+.post-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.post-actions .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.post-page {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.post-page h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-page-meta {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.post-page-content {
+    margin-bottom: 1rem;
+}
+
+.post-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.post-actions .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+}
