@@ -5,6 +5,7 @@ import CreatePost from './pages/CreatePost/CreatePost'
 import PostPage from './pages/PostPage/PostPage'
 import { PostsProvider } from './context/PostsContext'
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
 // App sets up routing and provides the PostsProvider for local state
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/post/:id" element={<PostPage />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </PostsProvider>
   )

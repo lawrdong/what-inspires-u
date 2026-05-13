@@ -1,36 +1,61 @@
 import { Link } from 'react-router-dom';
-import style from './Header.module.css'
+import styles from './Header.module.css';
 
 export default function Header() {
     return (
-        <>
-            <div className="logo-card">
-                <div className="logopic">
-                    <div className="spin-container">
-                        <img src="/logo.jpeg" alt="Logo" className="spinning-logo" aria-label="Logo" />
-                    </div>
-                </div>
+        <header className={styles.wrapper}>
+            <Link to="/new" className={styles.shareBtn}>
+                +
+            </Link>
 
-                <div className="header-bg">
-                    <h3>
-                        <a href="https://tmp3o.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit tmp3o.com">tmp3o.com</a>
-                    </h3>
+            <div className={styles.topbar}>
+                
+                <div className={styles.topbarRight}>
+                    <span></span>
+                    <span className={styles.issue}></span>
                 </div>
             </div>
 
-            <header className="header">
-                <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <h1>what inspires u?</h1>
-                </Link>
+            <div className={styles.main}>
+                <div className={styles.left}>
+                    <span className={styles.label}></span>
+                     <a
+                    href="https://tmp3o.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.topbarLink}
+                >
+                    tmp3o.com
+                </a>
 
-                <div className="description">
-                    <p>a collection of music, images, anything.</p>
+                    <Link to="/" className={styles.titleLink}>
+                        <h1 className={styles.title}>
+                            WHAT INSPIRES <span>U?</span>
+                        </h1>
+                    </Link>
+                    <p className={styles.subtitle}></p>
+
+                    <p className={styles.desc}></p>
                 </div>
 
-                <nav>
-                    <Link to="/new" className="btn btn-primary">share inspiration</Link>
-                </nav>
-            </header>
-        </>
-    )
+                <div className={styles.center}>
+                   
+
+                </div>
+
+                <div className={styles.right}>
+
+                </div>
+            </div>
+
+            
+
+            <div className={styles.logoBg}>
+                <div className={styles.spinContainer}>
+                    <img src="/logo.jpeg" alt="" aria-hidden="true" />
+                </div>
+            </div>
+
+        </header>
+    );
 }
