@@ -51,7 +51,7 @@ export default function Header() {
             
 
             <div className={styles.logoBg}>
-                <div className={styles.spinContainer}>
+                <div className={styles.spinContainer} id="header-logo" style={{ opacity: 0 }}>
                     <img src="/logo.jpeg" alt="" aria-hidden="true" />
                 </div>
             </div>

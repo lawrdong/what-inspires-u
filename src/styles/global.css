@@ -10,7 +10,6 @@ html,
 body {
     height: 100%;
     margin: 0;
-    overflow: hidden;
 }
 
 body {
@@ -18,6 +17,7 @@ body {
     color: #1a1a1a;
     overflow-y: auto;
     scrollbar-width: none;
+    overflow: hidden;
 }
 
 body::-webkit-scrollbar {

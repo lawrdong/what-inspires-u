@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { usePosts } from '../../context/PostsContext';
 import PostCard from '../../components/PostCard/PostCard';
 import HomeControls from '../../components/HomeControls/HomeControls';
+import Hero from '../../components/Hero/Hero';
 
 export default function Home() {
   const { posts, fetchPosts } = usePosts();
@@ -30,10 +31,11 @@ export default function Home() {
   }, [posts, query, sort]);
 
   if (loading) return <h2>Loading posts...</h2>;
-  if (!posts.length) return <h2>No posts yet. Be the first to share something 😪</h2>;
+  if (!posts.length) return <h2></h2>;
 
   return (
     <div>
+      <Hero />
       <HomeControls query={query} setQuery={setQuery} sort={sort} setSort={setSort} />
 
       <div className="masonry">

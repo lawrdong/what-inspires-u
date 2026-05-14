@@ -1,0 +1,336 @@
+/* ─── hero section ──────────────────────────────────────── */
+
+.hero {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 40px;
+}
+
+/* ─── case wrapper ───────────────────────────────────────── */
+
+.caseWrap {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+/* ─── options (left column) ──────────────────────────────── */
+
+.options {
+  position: absolute;
+  left: -190px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  will-change: transform;
+}
+
+.opt {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #6b6459;
+  text-transform: lowercase;
+  padding: 8px 16px;
+  background: #ffffff;
+  border: 1px solid #d4cfc6;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.opt:hover {
+  background: #1a1714;
+  color: #f7f4ef;
+}
+
+.optActive {
+  background: #1a1714;
+  color: #f7f4ef;
+}
+
+
+/* ─── title ─────────────────────────────────────────────── */
+
+.titleLink {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 0.95;
+    color: #1a1714;
+    letter-spacing: -0.01em;
+    text-transform: lowercase;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.title span {
+    font-weight: 500;
+    color: #6b6459;
+}
+
+/* ─── top bar ─────────────────────────────────────────── */
+
+.topbarLink {
+    color: #1a1714;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.topbarLink:hover {
+    text-decoration: underline;
+}
+
+
+/* ─── cd spine ───────────────────────────────────────────── */
+
+.spine {
+  width: 24px;
+  height: 500px;
+  border: 4px solid #b3b3b3;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: -1000;
+}
+
+.spine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  pointer-events: none;
+}
+
+.spineText {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: #716e8a;
+  text-transform: lowercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+/* ─── case body ──────────────────────────────────────────── */
+
+.caseBody {
+  width: 500px;
+  height: 500px;
+  background: #ffffff;
+  border: 5px solid     #b3b3b3;
+  border-radius: 0 0 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1000;
+}
+
+.caseBody::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+.caseBody::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8),
+    inset 2px 2px 8px rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* ─── disc ───────────────────────────────────────────────── */
+
+.discSlot {
+  width: 420px;
+  height: 420px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disc {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  position: relative;
+  will-change: transform;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.disc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    rgba(255, 255, 255, 0.4) 0deg,
+    rgba(255, 255, 255, 0) 90deg,
+    rgba(255, 255, 255, 0.2) 180deg,
+    rgba(255, 255, 255, 0) 270deg,
+    rgba(255, 255, 255, 0.4) 360deg
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.discHole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f7f4ef;
+  border: 1px solid #d4d0c8;
+  z-index: 2;
+}
+
+.discLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ─── scroll hint ────────────────────────────────────────── */
+
+.scrollHint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: #8a7f6e;
+  text-transform: lowercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.scrollArrow {
+  width: 1px;
+  height: 32px;
+  background: #c8bfaf;
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollArrow::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: #8a7f6e;
+  animation: drip 1.5s ease-in infinite;
+}
+
+@keyframes drip {
+  0%   { top: -100%; }
+  100% { top: 100%; }
+}
+
+
+
+/* ─── responsive ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .options {
+    position: static;
+    transform: none !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 24px;
+    left: auto;
+    top: auto;
+  }
+
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding: 24px;
+  }
+
+  .caseBody {
+    width: 260px;
+    height: 260px;
+  }
+
+  .spine {
+    height: 260px;
+  }
+
+  .disc {
+    width: 200px;
+    height: 200px;
+  }
+
+  .discSlot {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@keyframes discSpin {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
