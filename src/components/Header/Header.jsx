@@ -9,7 +9,7 @@ export default function Header() {
             </Link>
 
             <div className={styles.topbar}>
-                
+
                 <div className={styles.topbarRight}>
                     <span></span>
                     <span className={styles.issue}></span>
@@ -19,14 +19,14 @@ export default function Header() {
             <div className={styles.main}>
                 <div className={styles.left}>
                     <span className={styles.label}></span>
-                     <a
-                    href="https://tmp3o.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.topbarLink}
-                >
-                    tmp3o.com
-                </a>
+                    <a
+                        href="https://tmp3o.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.topbarLink}
+                    >
+                        tmp3o.com
+                    </a>
 
                     <Link to="/" className={styles.titleLink}>
                         <h1 className={styles.title}>
@@ -39,7 +39,7 @@ export default function Header() {
                 </div>
 
                 <div className={styles.center}>
-                   
+
 
                 </div>
 
@@ -48,7 +48,7 @@ export default function Header() {
                 </div>
             </div>
 
-            
+
 
             <div className={styles.logoBg}>
                 <div className={styles.spinContainer} id="header-logo" style={{ opacity: 0 }}>

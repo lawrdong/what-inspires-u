@@ -21,8 +21,8 @@ export default function Hero() {
                 return;
             }
 
-            gsap.set(disc, { transformPerspective: 800 });
-            gsap.set('#header-logo', { transformPerspective: 800 });
+            gsap.set('#header-logo', { opacity: 0, rotation: 0 });
+            gsap.set(disc, { rotation: 0, transformPerspective: 800 });
 
             const logoRect = headerLogo.getBoundingClientRect();
             const discRect = disc.getBoundingClientRect();
@@ -35,10 +35,16 @@ export default function Hero() {
                 scrollTrigger: {
                     trigger: '#hero',
                     start: 'top top',
-                    end: 'bottom top',
+                    end: '+=100%',        // pin for one full viewport height of scroll
+                    pin: true,            // locks the hero in place while you scroll
                     scrub: 2,
+                    snap: {
+                        snapTo: 1,          // snap to end when close enough
+                        duration: 0.8,
+                        ease: 'power2.inOut',
+                    },
                     onLeave: () => {
-                        gsap.set(disc, { opacity: 0.13 });
+                        gsap.set(disc, { opacity: 0.13, transformPerspective: 800 });
                         gsap.to(disc, {
                             rotationX: '+=360',
                             rotationY: '+=360',
@@ -47,8 +53,7 @@ export default function Hero() {
                             ease: 'none',
                             repeat: -1,
                         });
-
-                        gsap.set('#header-logo', { opacity: 0.13 });
+                        gsap.set('#header-logo', { opacity: 0.13, transformPerspective: 800 });
                         gsap.to('#header-logo', {
                             rotationX: '+=360',
                             rotationY: '+=360',
@@ -60,7 +65,9 @@ export default function Hero() {
                     },
                     onEnterBack: () => {
                         gsap.killTweensOf(disc);
+                        gsap.killTweensOf('#header-logo');
                         gsap.set(disc, { opacity: 0 });
+                        gsap.set('#header-logo', { opacity: 0 });
                     }
                 }
             });

@@ -1,26 +1,30 @@
-/* Global reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
 }
 
-html,
-body {
-    height: 100%;
-    margin: 0;
+html {
+  height: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 body {
-    background-color: #f5f5f5;
-    color: #1a1a1a;
-    overflow-y: auto;
-    scrollbar-width: none;
-    overflow: hidden;
+  height: 100%;
+  background-color: #f7f4ef;
+  color: #1a1714;
+  scrollbar-width: none;
 }
 
 body::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
+  width: 0px;
+  background: transparent;
 }
