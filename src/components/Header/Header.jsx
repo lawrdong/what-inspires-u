@@ -21,6 +21,7 @@ export default function Header() {
                     <span className={styles.label}></span>
                     <a
                         href="https://tmp3o.com/"
+                        id="header-tmp3o"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.topbarLink}
@@ -28,7 +29,7 @@ export default function Header() {
                         tmp3o.com
                     </a>
 
-                    <Link to="/" className={styles.titleLink}>
+                    <Link to="/" className={styles.titleLink} id="header-title">
                         <h1 className={styles.title}>
                             WHAT INSPIRES <span>U?</span>
                         </h1>

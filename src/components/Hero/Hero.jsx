@@ -6,6 +6,7 @@ import styles from './Hero.module.css';
 
 export default function Hero() {
     const discRef = useRef(null);
+    const discCaseRef = useRef(null);
     const caseWrapRef = useRef(null);
     const optionsRef = useRef(null);
 
@@ -37,10 +38,10 @@ export default function Hero() {
                     start: 'top top',
                     end: '+=100%',        // pin for one full viewport height of scroll
                     pin: true,            // locks the hero in place while you scroll
-                    scrub: 2,
+                    scrub: 0.5,
                     snap: {
                         snapTo: 1,          // snap to end when close enough
-                        duration: 0.8,
+                        duration: 0.2,
                         ease: 'power2.inOut',
                     },
                     onLeave: () => {
@@ -72,16 +73,38 @@ export default function Hero() {
                 }
             });
 
-            tl.to(disc, {
-                x: targetX,
-                y: targetY,
-                scale: targetScale,
-                opacity: 0,
-                rotationX: 180,
-                rotationY: 180,
-                rotationZ: 180,
-                ease: 'none',
-            }, 0)
+            tl
+                .to(caseWrapRef.current, {
+                    scale: 0.7,
+                    z: -400,
+                    opacity: 0,
+                    ease: 'none',
+                }, 0)
+
+                // case image flies back independently
+                .to(discCaseRef.current, {
+                    z: -500,
+                    scale: 0.5,
+                    opacity: 0,
+                    ease: 'none',
+                }, 0)
+
+                // disc comes forward
+                .to(disc, {
+                    scale: 1.4,
+                    z: 300,
+                    ease: 'none',
+                }, 0)
+                .to(disc, {
+                    x: targetX,
+                    y: targetY,
+                    scale: targetScale,
+                    opacity: 0,
+                    rotationX: 180,
+                    rotationY: 180,
+                    rotationZ: 180,
+                    ease: 'none',
+                }, 0)
                 .to('#header-logo', { opacity: 1, ease: 'none' }, 0)
                 .to(optionsRef.current, { x: -60, opacity: 0 }, 0)
                 .to(caseWrapRef.current, { x: 40, opacity: 0 }, 0);
@@ -132,22 +155,32 @@ export default function Hero() {
                 </div>
 
 
-                {/* cd spine */}
-                <div className={styles.spine}>
-                    <span className={styles.spineText}>tmp3o · what inspires u</span>
-                </div>
+
 
                 {/* cd case body */}
                 <div className={styles.caseBody}>
                     <div className={styles.discSlot}>
+
                         <div className={styles.disc} ref={discRef}>
+                            {/* cd spine */}
+                            <div className={styles.spine}>
+                                <span className={styles.spineText}>+TEMPO · what inspires u</span>
+                            </div>
                             <img
-                                src="/logo.jpeg"
+                                src="/cd1.png"
+                                className={styles.discCase}
+                                ref={discCaseRef}
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            <img
+                                src="/tempoLogo.png"
                                 className={styles.discLogo}
                                 alt=""
                                 aria-hidden="true"
                             />
                         </div>
+
                     </div>
                 </div>
 
