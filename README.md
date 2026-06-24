@@ -1,14 +1,13 @@
 # what inspires u?
 
-A tiny React + Vite app that functions as a creative forum with a random, old-blog aesthetic.
+A personal application that acts as a creative forum for sharing the experiences, aesthetics, and media of internet culture that uniquely inspires us as individuals.
 
-Features:
-- Local state storage for posts (you can swap to Supabase later)
-- Masonry feed with polaroid-style post cards
-- Create, edit, delete posts
-- Upvote "this inspired me ❤️"
-- Comments (reactions)
-- Search + sort (newest / most inspired / random)
+features:
+- masonry type feed
+- create, edit, delete posts
+- upvote other posts!
+- comments (reactions)
+- search + sort (newest / most inspired / random)
 
 Run locally:
 
